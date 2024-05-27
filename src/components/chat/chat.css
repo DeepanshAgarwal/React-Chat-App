@@ -58,11 +58,74 @@
 
 .chat-messages {
     flex: 1;
-    /* overflow-y: auto; */
+    overflow-y: scroll;
     padding: 20px;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* gap: 20px; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(17, 25, 40, 0.8);
+    border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(17, 25, 40);
+}
+
+.chat-message {
+    max-width: 70%;
+    display: flex;
+    gap: 20px;
+}
+
+.chat-message img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.chat-message .chat-message-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.chat-message .chat-message-text p {
+    padding: 20px;
+    background-color: rgba(17, 25, 40, 0.3);
+    border-radius: 10px;
+}
+
+.chat-message .chat-message-text span {
+    font-size: 13px;
+}
+
+.chat-message .chat-message-text img {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.own-message {
+    align-self: flex-end;
+}
+
+.own-message .chat-message-text p {
+    background-color: #5183fe;
 }
 
 .chat-new-message {

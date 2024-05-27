@@ -17,7 +17,7 @@
     border-radius: 10px;
 }
 
-.container::-webkit-scrollbar-thumb:hover {
+.chatList::-webkit-scrollbar-thumb:hover {
     background: rgba(17, 25, 40);
 }
 
