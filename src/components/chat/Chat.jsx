@@ -1,10 +1,16 @@
 import "./chat.css";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import EmojiPicker from "emoji-picker-react";
 
 export default function Chat() {
     const [emojiOpen, setEmojiOpen] = useState(false);
     const [message, setMessage] = useState("");
+
+    const endRef = useRef(null);
+
+    useEffect(() => {
+        endRef.current.scrollIntoView({ behavior: "smooth" });
+    }, []);
 
     function handleEmoji(e) {
         setMessage((prev) => prev + e.emoji);
@@ -100,18 +106,7 @@ export default function Chat() {
                         <span className="chat-timestamp">1:30 PM</span>
                     </div>
                 </div>
-                {/* <div className="chat-message chat-receiver">
-                    <div className="chat-message-top">
-                        <span className="chat-message-name">John Doe</span>
-                        <span className="chat-message-timestamp">1:30 PM</span>
-                    </div>
-                    <div className="chat-message-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec nec eros eget sapien tempus aliquet. Duis at
-                        finibus odio. Sed a quam maximus, condimentum turpis ac,
-                        tempor magna.
-                    </div>
-                </div> */}
+                <div ref={endRef}></div>
             </div>
             <div className="chat-new-message">
                 <div className="new-message-icons">
