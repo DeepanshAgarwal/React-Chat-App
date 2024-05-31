@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import "./login.css";
 import { useState } from "react";
 
@@ -16,11 +17,16 @@ export default function Login() {
         }
     };
 
+    const handleLogin = (e) => {
+        e.preventDefault();
+        toast.success("Logged in successfully!");
+    };
+
     return (
         <div className="login">
             <div className="form welcome-back">
                 <h1>Welcome Back!</h1>
-                <form>
+                <form onSubmit={handleLogin}>
                     <input type="email" placeholder="Email" name="email" />
                     <input
                         type="password"
